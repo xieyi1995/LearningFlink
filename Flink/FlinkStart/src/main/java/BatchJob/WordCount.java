@@ -10,7 +10,7 @@ import org.apache.flink.util.Collector;
 public class WordCount {
     public static void main(String[] args) throws Exception {
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
-        String inputpath = "src/main/resources/WordInput";
+        String inputpath = "/Users/xieyi01/MyCode/LearningFlink/Flink/FlinkStart/src/main/resources/WordInput";
         DataSource<String> source = env.readTextFile(inputpath);
         AggregateOperator<Tuple2<String, Integer>> sum = source.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {
             @Override
